@@ -1,0 +1,1 @@
+gets movies from a specified database and imdb identifer, tweak it to your liking
