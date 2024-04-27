@@ -13,7 +13,7 @@ static int callback(void *unused, int count, char **data, char **field_name) {
         field_name[i][0] = toupper(field_name[i][0]); // set the first character of the field to be 
                                                       // uppercase (e.g. "title" becomes "Title")
 
-        // if the thing being printed is bytes then convert it to gb and print that instead...
+        // if the thing being printed is bytes then convert it to gib and print that instead...
         if ((i + 1) == 2) {
             double gibs = (double)strtoull(data[i], NULL, 0) / 1.074e9;
             printf("%s: %0.2f GiB (%s bytes)\n", field_name[i], gibs, data[i]);
@@ -22,7 +22,7 @@ static int callback(void *unused, int count, char **data, char **field_name) {
         }
     }
 
-    // print a new line once the elements have been printed (which is the amount of elements we queryed for)
+    // print a new line once the elements have been printed
     printf("=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=\n");
 
     return 0;
